@@ -47,16 +47,16 @@ function modalSchedule({ startEnroll, endEnroll, disclosure, firstCall, secondCa
     `${formatDays(days)} das ${formatTime(time[0])} às ${formatTime(time[1])}`,
   ];
 
-  for (let i = 0; i < stepsContent.length; i++) {
+  stepsContent.forEach((step, i) => {
     const tr = document.createElement("tr");
     const steps = document.createElement("td");
     const period = document.createElement("td");
-    steps.textContent = stepsContent[i];
+    steps.textContent = step;
     period.textContent = periodContent[i];
 
     tr.append(steps, period);
     table.append(tr);
-  }
+  });
   return table;
 }
 
