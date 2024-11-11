@@ -5,7 +5,6 @@ export function modalCard(item, type) {
   const modal = document.createElement("div");
   const modalCard = document.createElement("div");
   const close = document.createElement("span");
-  const content = document.createElement("div");
 
   modal.className = "modal";
   modalCard.className = "modal-card";
@@ -16,13 +15,13 @@ export function modalCard(item, type) {
     modal.remove();
   };
 
+  modalCard.append(close);
   if (type === "schedule") {
-    content.append(modalSchedule(item));
+    modalCard.append(modalSchedule(item));
   } else if (type === "requirements") {
-    content.append(modalRequirements(item));
+    modalCard.append(modalRequirements(item));
   }
 
-  modalCard.append(close, content);
   modal.append(modalCard);
   document.body.append(modal);
 }
