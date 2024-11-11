@@ -18,14 +18,17 @@ export function formatDays(days) {
 }
 
 // Função para formatar o horário no padrão 12h
-export function formatTime(time) {
-  const [hourPart, minutePart] = time.split(":");
-  const formattedHour = parseInt(hourPart, 10);
+export function formatTime(times) {
+  const formattedTimes = times.map((time) => {
+    const [hourPart, minutePart] = time.split(":");
+    const formattedHour = parseInt(hourPart, 10);
 
-  if (minutePart && minutePart !== "00") {
-    return `${formattedHour}h${minutePart}`;
-  }
-  return `${formattedHour}h`;
+    if (minutePart && minutePart !== "00") {
+      return `${formattedHour}h${minutePart}`;
+    }
+    return `${formattedHour}h`;
+  });
+  return `${formattedTimes[0]} às ${formattedTimes[formattedTimes.length - 1]}`;
 }
 
 // Define atributos para um elemento HTML

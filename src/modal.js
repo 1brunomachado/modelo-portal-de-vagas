@@ -44,7 +44,7 @@ function modalSchedule({ startEnroll, endEnroll, disclosure, firstCall, secondCa
     formatDateRange(firstCall),
     formatDateRange(secondCall),
     formatDate(classes),
-    `${formatDays(days)} das ${formatTime(time[0])} às ${formatTime(time[1])}`,
+    `${formatDays(days)} das ${formatTime(time)}`,
   ];
 
   stepsContent.forEach((step, i) => {
