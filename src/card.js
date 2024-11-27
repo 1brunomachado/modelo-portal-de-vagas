@@ -16,7 +16,7 @@ export function createButton({ tag, attr, cls, text }) {
 // Cria um cartão de curso e exibe na página
 export function cardCourse(item) {
   const list = document.querySelector(".list");
-  const card = document.createElement("div");
+  const card = document.createElement("article");
   const image = document.createElement("img");
   const content = document.createElement("div");
   const badges = createBadges([item.category, "Presencial", `${item.vacancies} vagas`, item.shift]);

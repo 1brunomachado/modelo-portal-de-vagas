@@ -406,6 +406,7 @@ li {
 }
 
 .modal-btn {
-  font-weight: var(--font-semi);
   margin: 0 auto;
+  font-weight: var(--font-semi);
+  transition: color 0.4s ease;
 }

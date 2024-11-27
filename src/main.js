@@ -19,6 +19,11 @@ async function fetchData() {
 function getCourses(courses) {
   const list = document.querySelector(".list");
   list.innerHTML = "";
+
+  if (!courses.length) {
+    alert("Nnenhum crsuo encontrado.");
+  }
+
   courses
     ?.sort((a, b) => a.endEnroll - b.endEnroll)
     .forEach((item) => {
