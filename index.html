@@ -4,65 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PSG - Vagas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400..600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <style>
-      .cursos {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 20vw, 275px), 1fr));
-        gap: 16px;
-        justify-items: center;
-        padding: 20px;
-      }
+    <div class="container">
+      <div class="filter">
+        <div for="filter-status" class="filter-select filter-status">
+          <select id="filter-status">
+            <option value="open">Inscrições abertas</option>
+            <option value="closed">Inscrições encerradas</option>
+          </select>
+        </div>
 
-      .modal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-      }
+        <div class="filter-select filter-city">
+          <select id="filter-city">
+            <option value="">Cidade</option>
+          </select>
+        </div>
 
-      .modal-card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        position: relative;
-        width: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
+        <div class="filter-select filter-type">
+          <select id="filter-type">
+            <option value="">Categoria</option>
+          </select>
+        </div>
+      </div>
 
-      .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 20px;
-      }
-    </style>
-
-    <label for="filter-status">Status:</label>
-    <select id="filter-status">
-      <option value="open">open</option>
-      <option value="closed">closed</option>
-    </select>
-
-    <label for="filter-type">Categoria:</label>
-    <select id="filter-type">
-      <option value="">Escolha a categoria</option>
-    </select>
-
-    <label for="filter-city">Cidade:</label>
-    <select id="filter-city">
-      <option value="">Escolha a cidade</option>
-    </select>
-
-    <div class="cursos"></div>
+      <div class="list"></div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

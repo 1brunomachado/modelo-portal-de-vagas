@@ -17,7 +17,7 @@ async function fetchData() {
 
 // Função para obter a lista de cursos e exibi-los
 function getCourses(courses) {
-  const list = document.querySelector(".cursos");
+  const list = document.querySelector(".list");
   list.innerHTML = "";
   courses
     ?.sort((a, b) => a.endEnroll - b.endEnroll)

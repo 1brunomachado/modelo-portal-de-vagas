@@ -8,8 +8,8 @@ export const isCanceled = (cancellation) => ({
     href: cancellation,
     target: "_blank",
   },
-  cls: "inscricao-cancelada",
-  text: "Comunicado de Cancelamento",
+  cls: "card-btn btn-cancel",
+  text: "Comunicado de cancelamento",
 });
 
 export const hasCandidates = (classifieds) => ({
@@ -18,28 +18,31 @@ export const hasCandidates = (classifieds) => ({
     href: classifieds,
     target: "_blank",
   },
-  cls: "inscricao-aberta",
+  cls: "card-btn btn-candidates",
   text: "Lista de selecionados",
 });
 
 export const soonEnroll = {
   tag: "div",
-  cls: "inscricao-breve",
+  attr: {
+    disabled: true,
+  },
+  cls: "card-btn btn-soon",
   text: "Inscrições em breve",
 };
 
 export const openEnroll = {
-  tag: "a",
-  attr: {
-    href: "terms",
-  },
-  cls: "inscricao-aberta",
+  tag: "div",
+  cls: "card-btn btn-open",
   text: "Inscreva-se",
 };
 
 export const closeEnroll = {
   tag: "div",
-  cls: "inscricao-fechada",
+  attr: {
+    disabled: true,
+  },
+  cls: "card-btn btn-close",
   text: "Inscrições encerradas",
 };
 
@@ -65,6 +68,7 @@ export function getEnrollStatus({ cancellation, startEnroll, endEnroll, classes 
     : isEnrollOpen(endEnroll)
     ? `Inscrições até ${formatDate(endEnroll)}`
     : `Início das aulas em ${formatDate(classes)}`;
+
   return text;
 }
 
